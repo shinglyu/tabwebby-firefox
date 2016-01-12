@@ -18,4 +18,5 @@ Download this [add-on xpi file](https://github.com/shinglyu/tabwebby-firefox/blo
 * Open `about:config`
 * Set `xpinstall.signature.required` to `false`
 
-
+#Credit
+Thanks to Sören Hentzschel for his [New Tab Override](https://addons.mozilla.org/en-US/firefox/addon/new-tab-override/) source code
