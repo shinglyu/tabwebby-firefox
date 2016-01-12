@@ -1,0 +1,16 @@
+{
+  "title": "TabWebby",
+  "name": "tabwebby",
+  "version": "0.0.1",
+  "description": "Turn your browser new tab into a helpful assistant",
+  "main": "index.js",
+  "author": "Fred Lin & Shing Lyu",
+  "engines": {
+    "firefox": ">=38.0a1",
+    "fennec": ">=38.0a1"
+  },
+  "license": "MPL",
+  "keywords": [
+    "jetpack"
+  ]
+}
