@@ -8,15 +8,22 @@ const newtaboverride = {
 
   init : function () {
     newtaboverride.override(NEWTAB_URL);
+
+    var tabs = require("sdk/tabs");
+    tabs.on('ready', function(tab) {
+      var worker = tab.attach({
+        contentScript: 'window.focus()'
+      });
+    });
   },
 
   override : function (newTabUrl) {
     if (this.version < NEW_API_FIREFOX_VERSION) {
-      require("sdk/preferences/service").set( "browser.startup.homepage", newTabUrl )
+      //require("sdk/preferences/service").set( "browser.startup.homepage", newTabUrl )
       require("sdk/preferences/service").set( "browser.newtab.url", newTabUrl );
       //require('resource:///modules/NewTabURL.jsm').NewTabURL.override(newTabUrl);
     } else {
-      require("sdk/preferences/service").set( "browser.startup.homepage", newTabUrl );
+      //require("sdk/preferences/service").set( "browser.startup.homepage", newTabUrl );
       const { Cc, Ci } = require('chrome');
       const aboutNewTabService = Cc['@mozilla.org/browser/aboutnewtab-service;1'].getService(Ci.nsIAboutNewTabService);
 
